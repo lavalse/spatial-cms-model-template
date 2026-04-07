@@ -1,0 +1,108 @@
+[
+  {
+    "id": "general/building",
+    "file": "general/building.json",
+    "name": "Generic Building",
+    "description": "General-purpose building footprint model with common attributes like address, use type, and floor count.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "building",
+      "general",
+      "footprint"
+    ],
+    "category": "general",
+    "modelCount": 1,
+    "fieldCount": 8,
+    "hasDataset": true
+  },
+  {
+    "id": "general/poi",
+    "file": "general/poi.json",
+    "name": "Generic POI",
+    "description": "General-purpose Point of Interest model with common attributes like name, category, address, and contact information.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "poi",
+      "general",
+      "points"
+    ],
+    "category": "general",
+    "modelCount": 2,
+    "fieldCount": 11,
+    "hasDataset": true
+  },
+  {
+    "id": "osm/building",
+    "file": "osm/building.json",
+    "name": "OSM Building",
+    "description": "Building model aligned with OpenStreetMap building tags. Suitable for importing and managing OSM building data.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "osm",
+      "openstreetmap",
+      "building",
+      "footprint"
+    ],
+    "category": "osm",
+    "modelCount": 1,
+    "fieldCount": 10,
+    "hasDataset": true
+  },
+  {
+    "id": "plateau/bldg",
+    "file": "plateau/bldg.json",
+    "name": "PLATEAU Building (bldg)",
+    "description": "Building model based on Japan's PLATEAU 3D city model specification (CityGML bldg module). Includes LOD attributes, structural data, and building use classification.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "plateau",
+      "japan",
+      "3d",
+      "building",
+      "citygml",
+      "bldg"
+    ],
+    "category": "plateau",
+    "modelCount": 1,
+    "fieldCount": 12,
+    "hasDataset": true
+  },
+  {
+    "id": "plateau/bldg-district",
+    "file": "plateau/bldg-district.json",
+    "name": "PLATEAU Building District",
+    "description": "District-level building aggregation model for PLATEAU. Provides summary statistics and zoning information for urban planning and analysis.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "plateau",
+      "japan",
+      "district",
+      "building",
+      "zoning",
+      "urban_planning"
+    ],
+    "category": "plateau",
+    "modelCount": 1,
+    "fieldCount": 10,
+    "hasDataset": true
+  },
+  {
+    "id": "plateau/road",
+    "file": "plateau/road.json",
+    "name": "PLATEAU Road (tran)",
+    "description": "Road model based on Japan's PLATEAU 3D city model specification (CityGML tran module). Includes road classification, width, and traffic attributes.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "plateau",
+      "japan",
+      "road",
+      "transportation",
+      "citygml",
+      "tran"
+    ],
+    "category": "plateau",
+    "modelCount": 1,
+    "fieldCount": 8,
+    "hasDataset": true
+  }
+]

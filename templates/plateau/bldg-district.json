@@ -1,0 +1,124 @@
+{
+  "$schema": "https://spatial-cms.dev/template/v1.json",
+  "templateVersion": "1.0.0",
+  "metadata": {
+    "name": "PLATEAU Building District",
+    "description": "District-level building aggregation model for PLATEAU. Provides summary statistics and zoning information for urban planning and analysis.",
+    "author": "Spatial CMS Community",
+    "license": "CC-BY-4.0",
+    "tags": ["plateau", "japan", "district", "building", "zoning", "urban_planning"]
+  },
+  "models": [
+    {
+      "key": "plateau_bldg_district",
+      "name": "Building District",
+      "description": "District-level aggregation of PLATEAU building data with zoning and statistics",
+      "geometryType": "POLYGON",
+      "srid": 6668,
+      "displayField": "district_name",
+      "governance": {
+        "approvalMode": "manual",
+        "publishMode": "manual"
+      },
+      "fields": [
+        {
+          "key": "district_name",
+          "label": "District Name",
+          "fieldType": "string",
+          "isRequired": true,
+          "orderIndex": 0
+        },
+        {
+          "key": "district_code",
+          "label": "District Code",
+          "fieldType": "string",
+          "isRequired": false,
+          "orderIndex": 1
+        },
+        {
+          "key": "city_name",
+          "label": "City Name",
+          "fieldType": "string",
+          "isRequired": false,
+          "orderIndex": 2
+        },
+        {
+          "key": "prefecture",
+          "label": "Prefecture",
+          "fieldType": "string",
+          "isRequired": false,
+          "orderIndex": 3
+        },
+        {
+          "key": "zone_type",
+          "label": "Zone Type",
+          "fieldType": "enum_",
+          "enumValues": [
+            "category_1_low_rise_residential",
+            "category_2_low_rise_residential",
+            "category_1_medium_high_rise_residential",
+            "category_2_medium_high_rise_residential",
+            "category_1_residential",
+            "category_2_residential",
+            "quasi_residential",
+            "neighborhood_commercial",
+            "commercial",
+            "quasi_industrial",
+            "industrial",
+            "exclusive_industrial",
+            "undesignated"
+          ],
+          "isRequired": false,
+          "orderIndex": 4
+        },
+        {
+          "key": "building_count",
+          "label": "Building Count",
+          "fieldType": "number",
+          "isRequired": false,
+          "validationJson": { "min": 0 },
+          "orderIndex": 5
+        },
+        {
+          "key": "avg_height_m",
+          "label": "Average Building Height (m)",
+          "fieldType": "number",
+          "isRequired": false,
+          "validationJson": { "min": 0 },
+          "orderIndex": 6
+        },
+        {
+          "key": "total_floor_area_sqm",
+          "label": "Total Floor Area (sqm)",
+          "fieldType": "number",
+          "isRequired": false,
+          "validationJson": { "min": 0 },
+          "orderIndex": 7
+        },
+        {
+          "key": "building_coverage_ratio",
+          "label": "Building Coverage Ratio (%)",
+          "fieldType": "number",
+          "isRequired": false,
+          "validationJson": { "min": 0, "max": 100 },
+          "orderIndex": 8
+        },
+        {
+          "key": "floor_area_ratio",
+          "label": "Floor Area Ratio (%)",
+          "fieldType": "number",
+          "isRequired": false,
+          "validationJson": { "min": 0 },
+          "orderIndex": 9
+        }
+      ]
+    }
+  ],
+  "dataset": {
+    "name": "PLATEAU Building Districts",
+    "description": "District-level building statistics from PLATEAU",
+    "license": "CC-BY-4.0",
+    "publishToDelivery": true,
+    "publishToOgc": false
+  }
+}
