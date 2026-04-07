@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spatial-cms.dev/template/v1.json",
+  "title": "Spatial CMS Template",
+  "description": "Schema for Spatial CMS model templates",
+  "type": "object",
+  "required": ["templateVersion", "metadata", "models"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "templateVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    },
+    "models": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/model"
+      }
+    },
+    "dataset": {
+      "$ref": "#/definitions/dataset"
+    }
+  },
+  "definitions": {
+    "metadata": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["key", "name", "fields"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "geometryType": {
+          "type": "string",
+          "enum": ["NONE", "POINT", "LINESTRING", "POLYGON", "MIXED"]
+        },
+        "is3D": {
+          "type": "boolean"
+        },
+        "srid": {
+          "type": "integer"
+        },
+        "displayField": {
+          "type": "string"
+        },
+        "governance": {
+          "$ref": "#/definitions/governance"
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/field"
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "approvalMode": {
+          "type": "string",
+          "enum": ["manual", "auto"]
+        },
+        "publishMode": {
+          "type": "string",
+          "enum": ["manual", "auto"]
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "required": ["key", "label", "fieldType"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fieldType": {
+          "type": "string",
+          "enum": ["string", "number", "boolean", "date", "json", "enum_", "reference", "geometry"]
+        },
+        "isRequired": {
+          "type": "boolean"
+        },
+        "defaultValue": {},
+        "enumValues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validationJson": {
+          "type": "object"
+        },
+        "referenceModelKey": {
+          "type": "string"
+        },
+        "orderIndex": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "fieldType": { "const": "enum_" }
+            },
+            "required": ["fieldType"]
+          },
+          "then": {
+            "required": ["enumValues"],
+            "properties": {
+              "enumValues": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fieldType": { "const": "reference" }
+            },
+            "required": ["fieldType"]
+          },
+          "then": {
+            "required": ["referenceModelKey"]
+          }
+        }
+      ]
+    },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "publishToDelivery": {
+          "type": "boolean"
+        },
+        "publishToOgc": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

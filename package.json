@@ -1,0 +1,13 @@
+{
+  "name": "spatial-cms-templates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Community templates for Spatial CMS",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "build-index": "node scripts/build-index.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}
