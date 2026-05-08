@@ -45,6 +45,8 @@ Browse the full catalog in [`templates/index.json`](templates/index.json) or exp
 | [`general/`](templates/general/) | General-purpose models (POI, buildings, etc.) |
 | [`plateau/`](templates/plateau/) | [PLATEAU](https://www.mlit.go.jp/plateau/) Japan 3D city models |
 | [`osm/`](templates/osm/) | OpenStreetMap-aligned models |
+| [`gif/`](templates/gif/) | [GIF](https://github.com/JDA-DM/GIF) (Government Interoperability Framework) reference models published by Japan Digital Agency |
+| [`municipal/`](templates/municipal/) | [自治体標準オープンデータセット](https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test) (Municipal Standard Open Data Set) — concrete dataset templates for Japanese municipalities |
 
 ## Template spec reference
 
@@ -86,8 +88,15 @@ Key points:
 | `general/` | Domain-agnostic, broadly applicable models |
 | `plateau/` | Japan PLATEAU / CityGML-based models (typically SRID 6668) |
 | `osm/` | Models aligned with OpenStreetMap tagging conventions |
+| `gif/` | GIF (政府相互運用性フレームワーク) abstract reference models. Multi-model templates that demonstrate normalized address sharing via `reference` fields. SRID 4326. |
+| `municipal/` | 自治体標準オープンデータセット concrete data set definitions. Single-model templates with **Japanese-primary `label`** matching official CSV column names. SRID 4326. |
 
 Propose new categories in your PR description when existing ones don't fit.
+
+### Label language convention
+
+- `general/`, `plateau/`, `osm/` — English `label` (consistent with existing patterns)
+- `gif/`, `municipal/` — **Japanese `label`** matching the official Japanese specification column names. English explanations live in the model's `description` field. This is intentional: municipality staff and CSV-to-CMS importers match against the official Japanese column names.
 
 ## Contributing
 
