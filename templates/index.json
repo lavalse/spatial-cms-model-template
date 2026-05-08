@@ -53,6 +53,25 @@
     "hasDataset": true
   },
   {
+    "id": "municipal/aed",
+    "file": "municipal/aed.json",
+    "name": "自治体標準ODS - AED設置箇所一覧",
+    "description": "Municipal Standard Open Data Set: AED installation locations. Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁 (Japan Digital Agency). All field labels are the exact Japanese column names from the spec; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "municipal",
+      "japan",
+      "ods",
+      "aed",
+      "emergency",
+      "digital-agency"
+    ],
+    "category": "municipal",
+    "modelCount": 1,
+    "fieldCount": 16,
+    "hasDataset": true
+  },
+  {
     "id": "municipal/public-facility",
     "file": "municipal/public-facility.json",
     "name": "自治体標準ODS - 公共施設一覧",
@@ -107,25 +126,6 @@
     "category": "municipal",
     "modelCount": 1,
     "fieldCount": 23,
-    "hasDataset": true
-  },
-  {
-    "id": "municipal/aed",
-    "file": "municipal/aed.json",
-    "name": "自治体標準ODS - AED設置箇所一覧",
-    "description": "Municipal Standard Open Data Set: AED installation locations. Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁 (Japan Digital Agency). All field labels are the exact Japanese column names from the spec; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
-    "author": "Spatial CMS Community",
-    "tags": [
-      "municipal",
-      "japan",
-      "ods",
-      "aed",
-      "emergency",
-      "digital-agency"
-    ],
-    "category": "municipal",
-    "modelCount": 1,
-    "fieldCount": 16,
     "hasDataset": true
   },
   {
