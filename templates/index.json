@@ -32,6 +32,103 @@
     "hasDataset": true
   },
   {
+    "id": "gif/spatial-core",
+    "file": "gif/spatial-core.json",
+    "name": "GIF Spatial Core (Address / Facility / Building / Land)",
+    "description": "GIF (Government Interoperability Framework) reference model for spatial entities. Defines a normalized Address as a shared lookup, then Facility (POINT), Building (POLYGON), and Land (POLYGON), all referencing Address. Demonstrates the multi-model + reference pattern. Source: JDA-DM/GIF v2.3 Core Data Model XSD (https://github.com/JDA-DM/GIF). Field labels are Japanese to match the official specification; per-field English notes live in this top-level description and in each model description.",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "gif",
+      "japan",
+      "reference-model",
+      "address",
+      "facility",
+      "building",
+      "land",
+      "multi-model"
+    ],
+    "category": "gif",
+    "modelCount": 4,
+    "fieldCount": 44,
+    "hasDataset": true
+  },
+  {
+    "id": "municipal/public-facility",
+    "file": "municipal/public-facility.json",
+    "name": "自治体標準ODS - 公共施設一覧",
+    "description": "Municipal Standard Open Data Set: Public facilities (役所/公民館/図書館/学校/公園 etc.). Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁. Field labels are the exact Japanese column names from the spec; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "municipal",
+      "japan",
+      "ods",
+      "public-facility",
+      "digital-agency"
+    ],
+    "category": "municipal",
+    "modelCount": 1,
+    "fieldCount": 23,
+    "hasDataset": true
+  },
+  {
+    "id": "municipal/medical-institution",
+    "file": "municipal/medical-institution.json",
+    "name": "自治体標準ODS - 医療機関一覧",
+    "description": "Municipal Standard Open Data Set: Medical institutions (病院/診療所/歯科/薬局 etc.). Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁. Field labels are the exact Japanese column names from the spec; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "municipal",
+      "japan",
+      "ods",
+      "medical",
+      "healthcare",
+      "digital-agency"
+    ],
+    "category": "municipal",
+    "modelCount": 1,
+    "fieldCount": 20,
+    "hasDataset": true
+  },
+  {
+    "id": "municipal/evacuation-site",
+    "file": "municipal/evacuation-site.json",
+    "name": "自治体標準ODS - 指定緊急避難場所一覧",
+    "description": "Municipal Standard Open Data Set: Designated Emergency Evacuation Sites. Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁. Site categories follow 災害対策基本法 (Disaster Countermeasures Basic Act) classifications: 洪水/崖崩れ・土石流及び地滑り/高潮/地震/津波/大規模な火事/内水氾濫/火山現象. Field labels are the exact Japanese column names; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "municipal",
+      "japan",
+      "ods",
+      "evacuation",
+      "disaster",
+      "emergency",
+      "digital-agency"
+    ],
+    "category": "municipal",
+    "modelCount": 1,
+    "fieldCount": 23,
+    "hasDataset": true
+  },
+  {
+    "id": "municipal/aed",
+    "file": "municipal/aed.json",
+    "name": "自治体標準ODS - AED設置箇所一覧",
+    "description": "Municipal Standard Open Data Set: AED installation locations. Single-model POINT template matching the official CSV column definition (Definition A) published by デジタル庁 (Japan Digital Agency). All field labels are the exact Japanese column names from the spec; field keys are English snake_case. Coordinates are WGS84 / EPSG:4326. Source: https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "author": "Spatial CMS Community",
+    "tags": [
+      "municipal",
+      "japan",
+      "ods",
+      "aed",
+      "emergency",
+      "digital-agency"
+    ],
+    "category": "municipal",
+    "modelCount": 1,
+    "fieldCount": 16,
+    "hasDataset": true
+  },
+  {
     "id": "osm/building",
     "file": "osm/building.json",
     "name": "OSM Building",

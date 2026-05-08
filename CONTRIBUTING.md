@@ -48,8 +48,24 @@ Use an existing category when possible:
 | `general/` | Domain-agnostic, broadly applicable models |
 | `plateau/` | Japan PLATEAU / CityGML-based models |
 | `osm/` | OpenStreetMap-aligned models |
+| `gif/` | Japan Digital Agency GIF reference models (abstract classes — Address, Facility, Building, Land, etc.) |
+| `municipal/` | 自治体標準オープンデータセット concrete dataset definitions (AED locations, public facilities, etc.) |
 
 If none fit, propose a new category in your PR description with a brief explanation.
+
+### Label language by category
+
+- `general/`, `plateau/`, `osm/` — English `label`
+- `gif/`, `municipal/` — **Japanese `label`** matching the official spec column names verbatim (e.g., `"label": "都道府県コード"`). Field-level English explanations are not stored per-field (the schema does not support a field-level `description`); place English documentation in the **model**'s `description` field instead.
+
+### Model key prefixes
+
+| Category | Prefix | Example |
+|----------|--------|---------|
+| `plateau/` | `plateau_*` | `plateau_bldg` |
+| `osm/` | `osm_*` | `osm_building` |
+| `gif/` | `gif_*` | `gif_facility` |
+| `municipal/` | `municipal_*` | `municipal_aed` |
 
 ## Guidelines
 
